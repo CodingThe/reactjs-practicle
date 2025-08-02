@@ -4,6 +4,7 @@ import './App.css';
 import CreateElement from './createElement';
 import NormalClassComponent from './practice/normalClassComponent';
 import PureClassComponent from './practice/pureClassComponent';
+import UseEffectHook from './practice/useEffect'
 
 function App() {
   const [hi, setHi] = useState('Hello');
@@ -21,6 +22,7 @@ function App() {
       <CreateElement />
       <NormalClassComponent hi={hi} />
       <PureClassComponent hi={hi} />
+      <UseEffectHook/>
     </div>
   );
 }

@@ -6,4 +6,3 @@ export default class NormalClassComponent extends Component {
     return <h1>{this.props.hi}</h1>;
   }
 }
-ggg
