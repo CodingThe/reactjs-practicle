@@ -12,18 +12,29 @@ export default function UseRef(){
     //     </>
     // );
 
-const [count, setCount] = useState(0);
-  const prevCount = useRef();
 
-  useEffect(() => {
-    prevCount.current = count;
-  });
+const [count,setCount]=useState(0);
+const prevCount = useRef();
 
-  return (
-    <div>
-      <p>Current: {count}</p>
-      <p>Previous: {prevCount.current}</p>
-      <button onClick={() => setCount(count + 1)}>Inc</button>
-    </div>
-  );
+useEffect(()=>{
+    prevCount.current=count;
+});
+return(
+<div>
+    <p>Current:{count}</p>
+    <p>Previous:{prevCount.current}</p>
+    <button onClick={()=>setCount(count+1)}></button>
+</div>
+)
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       countRef.current++;
+//       console.log('Count:', countRef.current);
+//     }, 1000);
+
+//     return () => clearInterval(interval);
+//   }, []);
+
+//   return <h1>Open console to see timer</h1>;
 };

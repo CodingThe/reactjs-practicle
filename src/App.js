@@ -6,6 +6,7 @@ import NormalClassComponent from './practice/normalClassComponent';
 import PureClassComponent from './practice/pureClassComponent';
 import UseEffectHook from './practice/useEffect'
 import UseRef from './practice/useRef';
+import EnhancedComponemt from './practice/hoc/normalFunction'
 
 function App() {
   const [hi, setHi] = useState('Hello');
@@ -25,6 +26,7 @@ function App() {
       <PureClassComponent hi={hi} />
       <UseEffectHook/>
       <UseRef/>
+      <EnhancedComponemt name="babu bhaiya"></EnhancedComponemt>
     </div>
   );
 }
