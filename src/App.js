@@ -8,6 +8,9 @@ import UseEffectHook from './practice/useEffect'
 import UseRef from './practice/useRef';
 import EnhancedComponemt from './practice/hoc/normalFunction'
 import UseFetch from './practice/customHook/useFetch';
+import { About } from './practice/routing/about';
+import { Home } from './practice/routing/home';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 function App() {
   const [hi, setHi] = useState('Hello');
 
@@ -42,6 +45,17 @@ function App() {
         </div>
       ))}
     </div></p>}
+    {/* routing */}
+      <Router>
+        <nav>
+          <Link to="/">home</Link>
+          <Link to="/about">About</Link>
+        </nav>
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/about" element={<About/>}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
