@@ -16,6 +16,7 @@ import ProtectedRoute from './practice/proctedRoutes/protectRoutes';
 import Dashboard from './practice/nestedRoutes.js/dashboard';
 import Setting from './practice/nestedRoutes.js/setting';
 import Profile from './practice/nestedRoutes.js/profile';
+import NomralForm from './practice/form/normalForm';
 function App() {
   const [hi, setHi] = useState('Hello');
 
@@ -104,6 +105,8 @@ function App() {
           </Route>
         </Routes>
       </Router>
+      {/* form */}
+      <NomralForm/>
     </div>
   );
 }
