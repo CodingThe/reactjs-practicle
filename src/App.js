@@ -11,6 +11,7 @@ import UseFetch from './practice/customHook/useFetch';
 import { About } from './practice/routing/about';
 import { Home } from './practice/routing/home';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import User from './practice/dynamicRouting/user'
 function App() {
   const [hi, setHi] = useState('Hello');
 
@@ -63,6 +64,17 @@ function App() {
       <Suspense fallback={<p>loading</p>}>
         <Celebrity/>
       </Suspense>
+
+      {/* dynamic routing */}
+      <Router>
+        <nav>
+          <Link to="/user/1">User 1</Link>
+          <Link to="/user/2">User 2</Link>
+        </nav>
+        <Routes>
+          <Route path="/user/:id" element={<User/>}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
