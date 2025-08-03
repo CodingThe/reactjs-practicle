@@ -12,6 +12,7 @@ import { About } from './practice/routing/about';
 import { Home } from './practice/routing/home';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import User from './practice/dynamicRouting/user'
+import ProtectedRoute from './practice/proctedRoutes/protectRoutes';
 function App() {
   const [hi, setHi] = useState('Hello');
 
@@ -73,6 +74,17 @@ function App() {
         </nav>
         <Routes>
           <Route path="/user/:id" element={<User/>}></Route>
+        </Routes>
+      </Router>
+      {/* protected routes */}
+      <Router>
+      <nav>
+        <Link to='/'>homepro</Link>
+        <Link to='/about'>aboutpro</Link>
+      </nav>
+        <Routes>
+          <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}></Route>
+          <Route path="/about" element= {<ProtectedRoute><About/></ProtectedRoute>}></Route>
         </Routes>
       </Router>
     </div>
