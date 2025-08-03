@@ -13,6 +13,9 @@ import { Home } from './practice/routing/home';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import User from './practice/dynamicRouting/user'
 import ProtectedRoute from './practice/proctedRoutes/protectRoutes';
+import Dashboard from './practice/nestedRoutes.js/dashboard';
+import Setting from './practice/nestedRoutes.js/setting';
+import Profile from './practice/nestedRoutes.js/profile';
 function App() {
   const [hi, setHi] = useState('Hello');
 
@@ -50,7 +53,7 @@ function App() {
       ))} */}
     </div></p>}
     {/* routing */}
-      <Router>
+      {/* <Router>
         <nav>
           <Link to="/">home</Link>
           <Link to="/about">About</Link>
@@ -59,7 +62,7 @@ function App() {
           <Route path="/" element={<Home/>}></Route>
           <Route path="/about" element={<About/>}></Route>
         </Routes>
-      </Router>
+      </Router> */}
       {/* lazy loading */}
       <h1>lazy loading</h1>
       <Suspense fallback={<p>loading</p>}>
@@ -67,7 +70,7 @@ function App() {
       </Suspense>
 
       {/* dynamic routing */}
-      <Router>
+      {/* <Router>
         <nav>
           <Link to="/user/1">User 1</Link>
           <Link to="/user/2">User 2</Link>
@@ -75,9 +78,9 @@ function App() {
         <Routes>
           <Route path="/user/:id" element={<User/>}></Route>
         </Routes>
-      </Router>
+      </Router> */}
       {/* protected routes */}
-      <Router>
+      {/* <Router>
       <nav>
         <Link to='/'>homepro</Link>
         <Link to='/about'>aboutpro</Link>
@@ -85,6 +88,20 @@ function App() {
         <Routes>
           <Route path="/" element={<ProtectedRoute><Home/></ProtectedRoute>}></Route>
           <Route path="/about" element= {<ProtectedRoute><About/></ProtectedRoute>}></Route>
+        </Routes>
+      </Router> */}
+      {/* nested routs */}
+      <Router>
+      <nav>
+        <Link to='dashboard'>dashboard</Link>
+        <Link to='dashboard/profile'>profile</Link>
+        <Link to='dashboard/settings'>settings</Link>
+      </nav>
+        <Routes>
+          <Route path='/dashboard' element={<Dashboard/>}>
+            <Route path='dashboard/profile' element = {<Profile/>}></Route>
+            <Route path='dashboard/settings' element={<Setting/>}></Route>
+          </Route>
         </Routes>
       </Router>
     </div>
